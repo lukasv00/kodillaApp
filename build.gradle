@@ -12,10 +12,6 @@ repositories {
 	mavenCentral()
 }
 
-springBoot {
-	mainClassName = 'com.crud.tasks.TasksApplication'
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
