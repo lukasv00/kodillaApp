@@ -20,26 +20,25 @@ public class TrelloController {
         this.trelloClient = trelloClient;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-    public List<TrelloBoardDto> getTrelloBoards() {
-        return trelloClient.getTrelloBoards();
-    }
+    //@RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
+    //public List<TrelloBoardDto> getTrelloBoards() {
+    //    return trelloClient.getTrelloBoards();
+    //}
 
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
     public CreatedTrelloCard createdTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return trelloClient.createNewCard(trelloCardDto);
     }
 
-   /* @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
+    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
     public void getTrelloBoards() throws TrelloObjectNotFound{
 
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 
         trelloBoards.stream().
                 filter(t -> t.getId() != null).
-                filter(t -> t.getName() != null).
                 filter(t -> t.getName().contains("Kodilla")).
                 forEach(t -> System.out.println(t.getId() + " " + t.getName()));
 
-    }*/
+    }
 }
