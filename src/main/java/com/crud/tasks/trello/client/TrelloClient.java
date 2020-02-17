@@ -57,13 +57,5 @@ public class TrelloClient {
                 .build().encode().toUri();
 
         return Arrays.asList(Optional.ofNullable(restTemplate.getForObject(url, TrelloBoardDto[].class)).orElseGet(() -> new TrelloBoardDto[0]));
-
-        /*try {
-          TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
-          return Arrays.asList(Optional.ofNullable(boardsResponse).orElse(new TrelloBoardDto[1]));
-        } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(), e);
-            return new ArrayList<>();
-        }*/
     }
 }
